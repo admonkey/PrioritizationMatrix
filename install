@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# stop script on error
+set -e
+
+# move to working directory
+cd $( dirname "${BASH_SOURCE[0]}" )
+project_root=$(pwd)
+
+# -dev for development tools
+if [ "$1" == "--dev" ]; then
+
+  # get composer if not already downloadeded
+  if [ ! -f composer.phar ]; then
+    wget https://getcomposer.org/download/1.1.2/composer.phar
+  fi
+
+  php composer.phar install
+
+fi
