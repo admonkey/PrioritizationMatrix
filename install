@@ -3,18 +3,44 @@
 # stop script on error
 set -e
 
+# get parameters
+usage() {
+  echo "Usage: ${BASH_SOURCE[0]}
+    environment: -e <dev|prod>
+  " 1>&2
+  exit 1
+}
+while getopts "e:s:n:" o; do
+  case "${o}" in
+    e)
+      ENVIRONMENT=${OPTARG}
+      [ "$ENVIRONMENT" == "dev" ] || [ "$ENVIRONMENT" == "prod" ] || usage
+      ;;
+    *)
+      usage
+      ;;
+esac
+done
+shift $((OPTIND-1))
+if [ -z "${ENVIRONMENT+x}" ]; then
+  usage
+fi
+
 # move to working directory
 cd $( dirname "${BASH_SOURCE[0]}" )
 project_root=$(pwd)
 
-# -dev for development tools
-if [ "$1" == "--dev" ]; then
+# get composer if not already downloadeded
+if [ ! -f composer.phar ]; then
+  wget https://getcomposer.org/download/1.1.2/composer.phar
+fi
 
-  # get composer if not already downloadeded
-  if [ ! -f composer.phar ]; then
-    wget https://getcomposer.org/download/1.1.2/composer.phar
-  fi
+if [ "$ENVIRONMENT" == "dev" ]; then
 
   php composer.phar install
+
+elif [ "$ENVIRONMENT" == "prod" ]; then
+
+  php composer.phar install --no-dev
 
 fi

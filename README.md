@@ -8,6 +8,18 @@ This project provides summary analysis for aggregate evaluations.
 
 * PHP >= 5.5.9
 
+The install script uses [wget][3] to download the dependency package manager [Composer v1.1.2][2].
+If you do not have [wget][3], then you will need to [manually download Composer][2]
+and place `composer.phar` in the project root directory.
+
+----------
+
+## Installation
+
+If you're installing this for production use, then you can get all the dependencies with the script.
+
+    ./install --prod
+
 ----------
 
 ## Development
@@ -15,10 +27,6 @@ This project provides summary analysis for aggregate evaluations.
 You can run the install script with the `--dev` flag to grab the developer tools like [PHPUnit][4].
 
     ./install --dev
-
-It will use [wget][3] to download the dependency package manager [Composer v1.1.2][2].
-If you do not have [wget][3], then you will need to [manually download Composer][2]
-and place `composer.phar` in the project root directory.
 
 ----------
 
