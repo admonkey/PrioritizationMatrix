@@ -1,10 +1,10 @@
-# Prioritization Matrix
+---------------------
+Prioritization Matrix
+---------------------
 
 This project provides summary analysis for aggregate evaluations.
 
-----------
-
-## Requirements
+# Requirements
 
 * PHP >= 5.5.9
 
@@ -12,9 +12,7 @@ The install script uses [wget][3] to download the dependency package manager [Co
 If you do not have [wget][3], then you will need to [manually download Composer][2]
 and place `composer.phar` in the project root directory.
 
-----------
-
-## Installation
+# Installation
 
 If you're installing this for production use, then you can get all the dependencies with the script.
 
@@ -22,11 +20,17 @@ If you're installing this for production use, then you can get all the dependenc
 
 ----------
 
-## Development
+# Development
 
 You can run the install script with the `--dev` flag to grab the developer tools like [PHPUnit][4].
 
     ./install --dev
+
+## Testing
+
+To run the test suite, use the `test` script.
+
+    ./test
 
 ----------
 
