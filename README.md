@@ -4,6 +4,32 @@ Prioritization Matrix
 
 This project provides summary analysis for aggregate evaluations.
 
+In order to prioritize items, a series of metrics must be created to assess each item.
+The metrics should take the form of a question, which are *limited to 255 characters.*
+The questions must have a weight and scale defined. The default weight is 100.
+A binary yes/no question should have a scale of 1. (Rated as either zero or one.)
+The default scale is 10. (Rated anywhere between zero and ten.)
+
+Example binary question:
+
+    Has this project been approved for funding?
+
+Example scaled question:
+
+    How useful will this project be to all departments? (10 is very useful, and 0 is not useful.)
+
+Similar measures may be encapsulated with component metrics.
+
+Example parent metric with components:
+
+    Feasibility
+
+      Does this project have a difficult scope?
+      Is this project expensive?
+      Will this project take a long time to implement?
+      Does this project require maintenance after completion?
+      Are there many risks to this project?
+
 # Requirements
 
 * PHP >= 5.5.9
