@@ -12,6 +12,6 @@
         }
     ],
     "require": {
-        "jeff-puckett/mysql-dtp": "^1.0"
+        "jeff-puckett/mysql-dtp": "^1.1.3"
     }
 }
