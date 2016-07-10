@@ -29,7 +29,7 @@ class PrioritizationMatrix
     $sql = 'CALL pm_create_metric(:name,:weight,:scale)';
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute($data);
-    return $stmt->fetch()['mid'];
+    return (int)$stmt->fetch()['mid'];
   }
 
 }

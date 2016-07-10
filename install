@@ -38,6 +38,9 @@ fi
 if [ "$ENVIRONMENT" == "dev" ]; then
 
   php composer.phar install
+  cd tests
+  ../vendor/jeff-puckett/mysql-dtp/create_db_users.bash -e test -n pm
+  cd "$project_root"
 
 elif [ "$ENVIRONMENT" == "prod" ]; then
 

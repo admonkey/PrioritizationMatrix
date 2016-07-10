@@ -4,13 +4,19 @@ set -e
 
 # move to working directory
 cd $( dirname "${BASH_SOURCE[0]}" )
+project_root_dir="$(pwd)"
 
+# setup database
+echo "creating database..."
+cd tests
+./exec_sql
+cd "$project_root_dir"
+echo "...database created."
 
 # PHP Unit tests
-
 # -v for verbose
 if [ "$1" == "-v" ]; then
-  ./vendor/bin/phpunit --debug   --stderr --bootstrap vendor/autoload.php tests
+  ./vendor/bin/phpunit --debug   --stderr --bootstrap tests/bootstrap.php tests
 else
-  ./vendor/bin/phpunit --testdox --stderr --bootstrap vendor/autoload.php tests
+  ./vendor/bin/phpunit --testdox --stderr --bootstrap tests/bootstrap.php tests
 fi
