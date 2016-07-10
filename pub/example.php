@@ -17,6 +17,13 @@ $pdo = new PDO(
   $database_username,
   $database_password
 );
-$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
 $pm = new PrioritizationMatrix($pdo);
+
+$data = [
+  'name' => 'a metric',
+  'weight' => 84,
+  'scale' => 10
+];
+
+// $id = $pm->create_metric($data);
