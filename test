@@ -10,7 +10,7 @@ cd $( dirname "${BASH_SOURCE[0]}" )
 
 # -v for verbose
 if [ "$1" == "-v" ]; then
-  ./vendor/bin/phpunit --debug --bootstrap vendor/autoload.php tests
+  ./vendor/bin/phpunit --debug   --stderr --bootstrap vendor/autoload.php tests
 else
-  ./vendor/bin/phpunit --testdox --bootstrap vendor/autoload.php tests
+  ./vendor/bin/phpunit --testdox --stderr --bootstrap vendor/autoload.php tests
 fi
