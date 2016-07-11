@@ -23,4 +23,9 @@ class PrioritizationMatrixTest extends PHPUnit_Framework_TestCase
     $this->assertSame(1,$pm->create_metric($data));
   }
 
+  public function testMetricFormCreated(){
+    $pm = new PrioritizationMatrix($this->db);
+    $this->assertSame(file_get_contents(__DIR__.'/data/metric.form.html'),$pm->get_metric());
+  }
+
 }
