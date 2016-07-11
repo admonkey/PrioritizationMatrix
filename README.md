@@ -60,6 +60,10 @@ To run the test suite, use the `test` script.
 
     ./test
 
+The verbose flag will show more detailed output.
+
+    ./test -v
+
 ----------
 
 [1]:http://php.net/manual/en/book.pdo.php
