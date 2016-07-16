@@ -100,7 +100,7 @@ class PrioritizationMatrix
       ])
       ->add("scale", IntegerType::class, [
         'attr' => [
-          'min' => 0
+          'min' => 1
         ]
       ]);
     $form = $formBuilder->getForm();
