@@ -14,7 +14,7 @@ while getopts "e:s:n:" o; do
   case "${o}" in
     e)
       ENVIRONMENT=${OPTARG}
-      [ "$ENVIRONMENT" == "dev" ] || [ "$ENVIRONMENT" == "prod" ] || usage
+      [ "$ENVIRONMENT" == "dev" ] || [ "$ENVIRONMENT" == "travis" ] || [ "$ENVIRONMENT" == "prod" ] || usage
       ;;
     *)
       usage
@@ -40,6 +40,13 @@ if [ "$ENVIRONMENT" == "dev" ]; then
   php composer.phar install
   cd tests
   ../vendor/jeff-puckett/mysql-dtp/create_db_users.bash -e test -n pm
+  cd "$project_root"
+
+elif [ "$ENVIRONMENT" == "travis" ]; then
+
+  php composer.phar install
+  cd tests
+  ../vendor/jeff-puckett/mysql-dtp/create_db_users.bash -e test -n pm -u root
   cd "$project_root"
 
 elif [ "$ENVIRONMENT" == "prod" ]; then
