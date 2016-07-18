@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "49b613d015e821499fa03073ece82ac8",
-    "content-hash": "01aa401193aa0ce76d03b530db95033f",
+    "hash": "61ff72cbd68920d07913ba97ec22175d",
+    "content-hash": "5414797f75a0303f7d9c352cf5642d50",
     "packages": [
         {
             "name": "jeff-puckett/mysql-dtp",
-            "version": "dev-clicreds",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeff-puckett/mysql-dtp.git",
@@ -2073,9 +2073,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "jeff-puckett/mysql-dtp": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
