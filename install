@@ -3,6 +3,8 @@
 # stop script on error
 set -e
 
+php -i
+
 # get parameters
 usage() {
   echo "Usage: ${BASH_SOURCE[0]}
